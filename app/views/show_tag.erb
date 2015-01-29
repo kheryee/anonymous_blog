@@ -1,0 +1,13 @@
+
+
+<% @posts.each_with_index do |p, index| %>
+<%= "--------------------------------------------------------------------------------" unless index == 0 %>
+<h1><a href="/posts/<%= p.id %>"><%= p.title %></a></h1><br>
+<p><%= p.body %></p><br>
+<p>By: <%= p.author %></p><br>
+<% end %>
+
+
+<a href="/">Back to home</a><br><br>
+<a href="/posts">Back to all posts</a><br><br>
+<a href="/tags">Back to all tags</a>

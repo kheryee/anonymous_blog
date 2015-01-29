@@ -1,0 +1,17 @@
+
+<h1>All Posts</h1>
+<% Post.all.each do |x| %>
+<h1><a href="/posts/<%=x.id%>"><%= x.title %></a></h1><br>
+<%= x.body %><br>
+<p>By: <%= x.author %></p>
+<p>Tags:
+<% x.tags.each_with_index do |t, index| %>
+<%= ", " unless index == 0 %>
+<a href="/tags/<%= t.name %>"><%= t.name %></a>
+<% end %>
+</p>
+<% end %>
+<br><br><br>
+<a href="/">Back to home</a><br><br>
+<a href="/posts">Back to all posts</a><br><br>
+<a href="/tags">Back to all tags</a>
